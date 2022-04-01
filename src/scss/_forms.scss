@@ -1,0 +1,76 @@
+/////////  main //////////
+
+main {
+  margin: 3rem auto 0 auto;
+  background-color: blanchedalmond;
+  width: 95%;
+
+  @include respond($bp-first) {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2.4rem;
+
+    @include respond($bp-first) {
+      margin-top: 7rem;
+    }
+  }
+
+  .form {
+    @include respond($bp-first) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: $col-gap;
+    }
+
+    .stepper {
+      @include flexCenter;
+      justify-content: space-between;
+      margin: 2.4rem 0;
+
+      @include respond($bp-first) {
+        grid-column: 1/7;
+      }
+
+      &__text {
+        display: none;
+        color: $font-color-light;
+        font-size: 1.6rem;
+
+        @include respond($bp-second) {
+          display: inline-block;
+        }
+      }
+
+      &__line {
+        background-color: $font-color-light;
+        width: 6rem;
+        height: 1px;
+      }
+
+      &__circle {
+        width: 3.2rem;
+        height: 3.2rem;
+        border: 1px solid $font-color-light;
+        border-radius: 50%;
+        @include flexCenter;
+
+        @include respond($bp-first) {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+
+        span {
+          color: $font-color-light;
+        }
+      }
+    }
+
+    &__address {
+      background-color: yellowgreen;
+      grid-column: 1/7;
+      grid-row: 2/3;
+    }
+  }
+}

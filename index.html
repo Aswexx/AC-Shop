@@ -4,11 +4,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/main.css">
+    <!-- <link rel="stylesheet" href="/CSS/main.css"> -->
     <title>Document</title>
 </head>
 <body>
-    <h1>Hi</h1>
-    <script src="./dist/bundle.js"></script>
+  <div class="container">
+    <header class="header">
+      <div class="logo-wrapper">
+        <label for="nav-trigger" class="nav-trigger-button">
+          <span class="nav-trigger-icon">&nbsp;</span> 
+        </label>
+        <img src="./image/logo@2x.png" alt="logo" class="logo">
+      </div>
+      <input type="checkbox" id="nav-trigger" class="nav-trigger">
+
+      
+
+      <nav class="nav">
+        <a href="#">男款</a>
+        <a href="#">女款</a>
+        <a href="#">最新消息</a>
+        <a href="#">客製商品</a>
+        <a href="#">聯絡我們</a>
+      </nav>
+
+      <div class="features">
+        <svg><use href="./image/magnifying-glass-solid.svg#magnify"></use></svg>
+        <svg><use href="image/cart-plus-solid.svg#cart"></use></svg>
+        <svg class="mode-switcher"><use href="./image/moon-regular.svg#moon"></use></svg>
+      </div>
+    </header>
+    <!-------------------------------------------------------------->
+    <!-------------------------------------------------------------->
+    <main>
+      <h1 class="title">結帳</h1>
+      <form action="" class="form">
+        <div class="stepper">
+          <div class="stepper__circle stepper__circle--1"><span>1</span></div>
+            <span class="stepper__text">寄送地址</span>
+          <div class="stepper__line"></div>
+          <div class="stepper__circle stepper__circle--2"><span>2</span></div>
+            <span class="stepper__text">運送方式</span>
+          <div class="stepper__line"></div>
+          <div class="stepper__circle stepper__circle--3"><span>3</span></div>
+            <span class="stepper__text">付款資訊</span>
+        </div>
+
+        <div class="form__address">
+          <h2 class="form__title">寄送地址</h2>
+          <div class="form__group">
+            <label for="salution" class="salution">稱謂</label>
+            <select name="" id="salution">
+              <option value="" disabled>無</option>
+              <option value="">先生</option>
+              <option value="">小姐</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="name" class="name">姓名</label>
+            <input type="text" id="name" placeholder="請輸入姓名">
+          </div>
+          <div class="form__group">
+            <label for="phone" class="phone">電話</label>
+            <input type="tel" id="phone" placeholder="請輸入行動電話">
+          </div>
+          <div class="form__group">
+            <label for="email" class="email">Email</label>
+            <input type="email" id="email" placeholder="請輸入電子郵件">
+          </div>
+          <div class="form__group">
+            <label for="city" class="city">城市</label>
+            <select name="city" id="city">
+              <option value="" disabled>請選擇城市</option>
+              <option value="">台北市</option>
+              <option value="">台中市</option>
+              <option value="">高雄市</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="address">地址</label>
+            <input type="text" id="address" placeholder="請輸入地址">
+          </div>
+        </div>
+        <div class="form__delivery"></div>
+        <div class="form__payment"></div>
+
+
+      </form>
+
+    </main>
+    <!-------------------------------------------------------------->
+    <!-------------------------------------------------------------->
+    <footer class="footer">
+
+    </footer>
+  </div>
+    <!-- <script src="./dist/bundle.js"></script> -->
+    <script src="./dev.js"></script>
 </body>
 </html>

@@ -1,0 +1,45 @@
+// variables
+
+$primary-color: #595cff;
+
+$font-color-primary: #2a2a2a;
+$font-color-light: #afb1bd;
+$font-color-label: #808080;
+$font-color-placeholder: #999999;
+$font-color-fee: #000000;
+
+$counter-color: #f0f0f5;
+
+$col-gap: calc(30 / 1110 * 100%);
+
+$darkmode-font-color: #ffffff;
+
+//
+
+@mixin showNav() {
+  transform: scale(1, 1);
+
+  a {
+    color: rgba($font-color-primary, 1);
+  }
+}
+
+@mixin showFeatures() {
+  transform: scale(1, 1);
+  opacity: 1;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$bp-first: 375px;
+$bp-second: 850px;
+
+@mixin respond($breakpoint) {
+  @media screen and (min-width:$breakpoint) {
+    @content
+  }
+}
