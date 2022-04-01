@@ -1,0 +1,35 @@
+.darkmode {
+  background-color: #121212;
+
+  .nav-trigger:checked~.nav {
+    a {
+      color: $darkmode-font-color;
+      transition: none;
+    }
+  }
+
+  .nav-trigger:checked~.features {
+    svg {
+      fill: $darkmode-font-color;
+    }
+  }
+
+  header {
+    .logo-wrapper {
+      .nav-trigger-button {
+        .nav-trigger-icon {
+
+          &,
+          &::before,
+          &::after {
+            background-color: $darkmode-font-color;
+          }
+        }
+      }
+    }
+
+    .features {
+      background-color: #121212;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+// general //
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color-primary;
+}
+
+.logo {
+  width: 135px;
+  height: 24px;
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+// form settings ////
+input,
+select {
+  height: 4rem;
+  border-radius: 10px;
+  border: none;
+  padding: 0 1rem;
+  width: 100%;
+  margin-top: .8rem;
+}
+
+.form__title {
+  font-size: 2.4rem;
+  margin-top: 3.2rem;
+  margin-bottom: .8rem;
+}
+
+label {
+  font-size: 1.2rem;
+  color: $font-color-label;
+}
+
+//////
+.container {
+  border: 1px solid;
+  margin: 0 auto;
+  margin-top: 1rem;
+}

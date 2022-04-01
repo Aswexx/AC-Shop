@@ -29,7 +29,8 @@ a {
   display: none;
 }
 
-input, select {
+input,
+select {
   height: 4rem;
   border-radius: 10px;
   border: none;
@@ -49,6 +50,12 @@ label {
   color: #808080;
 }
 
+.container {
+  border: 1px solid;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
 .darkmode {
   background-color: #121212;
 }
@@ -64,12 +71,6 @@ label {
 }
 .darkmode header .features {
   background-color: #121212;
-}
-
-.container {
-  border: 1px solid;
-  margin: 0 auto;
-  margin-top: 1rem;
 }
 
 header {

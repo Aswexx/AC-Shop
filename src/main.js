@@ -2,13 +2,6 @@ import './scss/main.scss'
 console.log('JS loaded')
 
 
-const modeToggle = document.querySelector('.mode-switcher');
-
-modeToggle.addEventListener('click', () => {
-  alert('ww');
-});
-
-
 //日夜模式
 const modeSwitcher = document.querySelector('.mode-switcher');
 const logo = document.querySelector('.logo')
