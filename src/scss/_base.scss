@@ -19,7 +19,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: $font-color-primary;
+  color: $gray-dark;
 }
 
 .logo {
@@ -31,16 +31,68 @@ a {
   display: none;
 }
 
-// form settings ////
+// form general settings ////
 input,
 select {
   height: 4rem;
   border-radius: 10px;
-  border: none;
+  border: 1px solid $gray-light;
   padding: 0 1rem;
   width: 100%;
   margin-top: .8rem;
+
+  &:focus {
+    outline: 1px solid $gray-medium;
+  }
 }
+
+[type="radio"] {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 ;
+  appearance: none;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid $gray-dark;
+
+  &:checked {
+    box-shadow: inset 0 0 0 7px $gray-dark;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input::placeholder {
+  color: $gray-light;
+}
+
+
+select {
+  appearance: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:invalid {
+    color: $gray-light;
+  }
+
+  option:not(:first-of-type) {
+    color: $gray-dark;
+  }
+}
+
+button {
+  height: 4.6rem;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+
+
 
 .form__title {
   font-size: 2.4rem;
@@ -48,9 +100,13 @@ select {
   margin-bottom: .8rem;
 }
 
+.form-group {
+  padding-top: 1rem;
+}
+
 label {
   font-size: 1.2rem;
-  color: $font-color-label;
+  color: $gray-medium;
 }
 
 //////

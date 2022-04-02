@@ -54,43 +54,143 @@
 
         <div class="form__address">
           <h2 class="form__title">寄送地址</h2>
-          <div class="form__group">
-            <label for="salution" class="salution">稱謂</label>
-            <select name="" id="salution">
-              <option value="" disabled>無</option>
-              <option value="">先生</option>
-              <option value="">小姐</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <label for="name" class="name">姓名</label>
-            <input type="text" id="name" placeholder="請輸入姓名">
-          </div>
-          <div class="form__group">
+            <div class="form-group form__address--salution">
+              <label for="salution" class="salution">稱謂</label>
+              <select name="" id="salution" required>
+                <option value="" disabled selected>無</option>
+                <option value="">先生</option>
+                <option value="">小姐</option>
+              </select>
+            </div>
+            <div class="form-group form__address--name">
+              <label for="name" class="name">姓名</label>
+              <input type="text" id="name" placeholder="請輸入姓名">
+            </div>
+
+          <div class="form-group form__address--phone">
             <label for="phone" class="phone">電話</label>
             <input type="tel" id="phone" placeholder="請輸入行動電話">
           </div>
-          <div class="form__group">
+          <div class="form-group form__address--email">
             <label for="email" class="email">Email</label>
             <input type="email" id="email" placeholder="請輸入電子郵件">
           </div>
-          <div class="form__group">
+          <div class="form-group form__address--city">
             <label for="city" class="city">城市</label>
-            <select name="city" id="city">
-              <option value="" disabled>請選擇城市</option>
+            <select name="city" id="city" required>
+              <option value="" disabled selected>請選擇城市</option>
               <option value="">台北市</option>
               <option value="">台中市</option>
               <option value="">高雄市</option>
             </select>
           </div>
-          <div class="form__group">
+          <div class="form-group form__address--address">
             <label for="address">地址</label>
             <input type="text" id="address" placeholder="請輸入地址">
           </div>
         </div>
-        <div class="form__delivery"></div>
-        <div class="form__payment"></div>
 
+
+        <div class="form__delivery">
+          <h2 class="form__title">運送方式</h2>
+          <label class="form-group form__delivery--normal" for="normal">
+            <input type="radio" id="normal" name="delivery">
+            <span>標準運送</span>
+            <span>約3~7個工作天</span>
+            <span>免費</span>
+          </label>
+          <label class="form-group form__delivery--DHL" for="DHL">
+            <input type="radio" id="DHL" name="delivery">
+            <span>DHL貨運</span>
+            <span>48小時內送達</span>
+            <span>$500</span>
+          </label>
+        </div>
+
+
+        <div class="form__payment">
+          <h2 class="form__title">付款資訊</h2>
+          <div class="form-group form__payment--card-name">
+            <label for="card-name">持卡人姓名</label>
+            <input type="text" id="card-name" placeholder="請輸入持卡人姓名">
+          </div>
+          <div class="form-group form__payment--card-num">
+            <label for="card-num">卡號</label>
+            <input type="text" id="card-num" placeholder="1111222233334444">
+          </div>
+          <div class="form-group form__payment--expire">
+            <label for="exprie">有效期限</label>
+            <input type="text" id="exprie" placeholder="MM/YY">
+          </div>
+          <div class="form-group form__payment--CVC">
+            <label for="CVC">CVC/CCV</label>
+            <input type="text" id="CVC" placeholder="123">
+          </div>
+        </div>
+<!--------------------------------------- shop-bag ---------------------------------->
+<!----------------------------------------------------------------------------------->
+        <div class="shop-bag">
+          <h3 class="shop-bag__title">購物籃</h3>
+          <div class="shop-bag__item">
+            <img src="./image/product-1@2x.png" alt="product" class="shop-bag__product-img">
+            <span class="shop-bag__product-title">破壞補丁修身牛仔褲</span>
+            <div class="shop-bag__product-counter form-row-spacebetween">
+              <div class="counter-btn minus">-</div>
+              <span class="quantity">1</span>
+              <div class="counter-btn plus">+</div>
+            </div>
+            <div class="shop-bag__item-price">$1,999</div>
+          </div>
+          <div class="shop-bag__item">
+            <img src="./image/product-2@2x.png" alt="product" class="shop-bag__product-img">
+            <span class="shop-bag__product-title">刷色直筒牛仔褲</span>
+            <div class="shop-bag__product-counter form-row-spacebetween">
+              <div class="counter-btn minus">-</div>
+              <span class="quantity">1</span>
+              <div class="counter-btn plus">+</div>
+            </div>
+            <div class="shop-bag__item-price">$1,999</div>
+          </div>
+
+                    <div class="shop-bag__item">
+                      <img src="./image/product-2@2x.png" alt="product" class="shop-bag__product-img">
+                      <span class="shop-bag__product-title">刷色直筒牛仔褲</span>
+                      <div class="shop-bag__product-counter form-row-spacebetween">
+                        <div class="counter-btn minus">-</div>
+                        <span class="quantity">1</span>
+                        <div class="counter-btn plus">+</div>
+                      </div>
+                      <div class="shop-bag__item-price">$1,999</div>
+                    </div>
+          <div class="shop-bag__item">
+            <img src="./image/product-2@2x.png" alt="product" class="shop-bag__product-img">
+            <span class="shop-bag__product-title">刷色直筒牛仔褲</span>
+            <div class="shop-bag__product-counter form-row-spacebetween">
+              <div class="counter-btn minus">-</div>
+              <span class="quantity">1</span>
+              <div class="counter-btn plus">+</div>
+            </div>
+            <div class="shop-bag__item-price">$1,999</div>
+          </div>
+<!------------------------------------------------ ---------------------------------->
+<!----------------------------------------------------------------------------------->
+          
+          <div class="shop-bag__amount">
+            <div class="form-row-spacebetween">
+              <span class="shop-bag__amount-text">運費</span>
+              <span class="shop-bag__delivery-fee">免費</span>
+            </div>
+            <div class="form-row-spacebetween">
+              <span class="shop-bag__amount-text">小計</span>
+              <span class="shop-bag__total">$3,998</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form__control form-row-spacebetween">
+          <button class="form__control--prev"><span>&larr;</span>上一步</button>
+          <button class="form__control--next">下一步<span>&rarr;</span></button>
+        </div>
 
       </form>
 

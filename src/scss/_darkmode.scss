@@ -3,14 +3,14 @@
 
   .nav-trigger:checked~.nav {
     a {
-      color: $darkmode-font-color;
+      color: $white;
       transition: none;
     }
   }
 
   .nav-trigger:checked~.features {
     svg {
-      fill: $darkmode-font-color;
+      fill: $white;
     }
   }
 
@@ -22,7 +22,7 @@
           &,
           &::before,
           &::after {
-            background-color: $darkmode-font-color;
+            background-color: $white;
           }
         }
       }

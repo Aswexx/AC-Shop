@@ -28,12 +28,12 @@ header {
 
         width: 15px;
         height: 2px;
-        background-color: $font-color-primary;
+        background-color: $gray-dark;
 
         &::before,
         &::after {
           height: 2px;
-          background-color: $font-color-primary;
+          background-color: $gray-dark;
         }
 
         &::before,
@@ -65,10 +65,10 @@ header {
       display: block;
       text-align: center;
       padding: 2rem 0;
-      border-bottom: 2px solid $font-color-light;
+      border-bottom: 2px solid $border-color;
       font-size: 1.6rem;
 
-      color: rgba($font-color-primary, 0);
+      color: rgba($gray-dark, 0);
       transition: color 0.3s ease-in 0.3s;
     }
   }
@@ -87,7 +87,7 @@ header {
       width: 24px;
       height: 24px;
       margin: 0 25px;
-      fill: $font-color-primary;
+      fill: $gray-dark;
     }
   }
 }
@@ -104,7 +104,7 @@ header {
 
 /////////////
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: $bp-first) {
   .container {
     max-width: 1110px;
 

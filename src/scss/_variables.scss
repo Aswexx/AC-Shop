@@ -1,26 +1,22 @@
 // variables
+$bg-primary: #595cff;
+$bg-gray: #f0f0f5;
 
-$primary-color: #595cff;
+$gray-dark: #2a2a2a;
+$gray-medium: #808080;
+$gray-light: #afb1bd;
+$white: #ffffff;
 
-$font-color-primary: #2a2a2a;
-$font-color-light: #afb1bd;
-$font-color-label: #808080;
-$font-color-placeholder: #999999;
-$font-color-fee: #000000;
-
-$counter-color: #f0f0f5;
+$border-color: #e5e5e5;
 
 $col-gap: calc(30 / 1110 * 100%);
-
-$darkmode-font-color: #ffffff;
 
 //
 
 @mixin showNav() {
   transform: scale(1, 1);
-
   a {
-    color: rgba($font-color-primary, 1);
+    color: rgba($gray-dark, 1);
   }
 }
 
@@ -35,6 +31,22 @@ $darkmode-font-color: #ffffff;
   align-items: center;
 }
 
+@mixin dropdownIcon(){
+  position: relative;
+  z-index: 0;
+  &::after {
+    position: absolute;
+    content: "";
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: $gray-dark transparent transparent transparent;
+    right: 1rem;
+    top: 50%;
+    z-index: -1;
+  }
+}
+
+//// RWD ////
 $bp-first: 375px;
 $bp-second: 850px;
 
@@ -42,4 +54,12 @@ $bp-second: 850px;
   @media screen and (min-width:$breakpoint) {
     @content
   }
+};
+////
+
+// help class //
+
+.form-row-spacebetween {
+  display: flex;
+  justify-content: space-between;
 }
