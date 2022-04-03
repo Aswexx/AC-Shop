@@ -2,7 +2,6 @@
 
 main {
   margin: 3rem auto 0 auto;
-  border: 1px solid orangered;
   width: 95%;
 
   @include respond($bp-first) {
@@ -11,6 +10,8 @@ main {
 
   .title {
     font-size: 2.4rem;
+    margin: 1.5rem auto 1.5rem 0;
+    padding-top: 3rem;
 
     @include respond($bp-first) {
       margin-top: 7rem;
@@ -75,7 +76,6 @@ main {
     }
 
     &__address {
-      background-color: yellowgreen;
       position: relative;
 
       &--salution {
@@ -139,12 +139,10 @@ main {
       @include respond($bp-first){
         grid-column: 1/7;
         grid-row: 2/3;
-        background-color: goldenrod;
         z-index: 99;
       }
 
       .form-group {
-        border: 1px solid red;
         cursor: pointer;
         display: grid;
         padding: 1.2rem 2rem;
@@ -184,7 +182,6 @@ main {
       grid-template-columns: repeat(6, 1fr);
       grid-column-gap: $col-gap;
       z-index: 199;
-      background-color: blueviolet;
 
       &--card-name {
         grid-column: 1/5;
@@ -278,6 +275,10 @@ main {
           text-align: center;
           background-color: $bg-gray;
           cursor: pointer;
+
+          &:hover {
+            background-color: $gray-light;
+          }
         }
 
         @include respond($bp-first){

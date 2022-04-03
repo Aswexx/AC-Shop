@@ -1,35 +1,104 @@
-.darkmode {
+#body.darkmode {
   background-color: #121212;
+  
+  a {
+    color: $white;
+    transition: none;
 
-  .nav-trigger:checked~.nav {
+    transition: color .1s ease-in;
+    &:hover {
+      color: $gray-light;
+    }    
+  }
+  
+  svg {
+    fill: #ffffff;
+  }
+
+  h1,h2,h3 {
+    color: #ffffff;
+  }
+
+  ul {
+    color: #ffffff;
     a {
-      color: $white;
-      transition: none;
+      color: rgba(#ffffff,.6);
     }
   }
 
-  .nav-trigger:checked~.features {
-    svg {
-      fill: $white;
+  input {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  select {
+    color: #ffffff;
+    &:invalid {
+      color: rgba($gray-light,.5);
     }
   }
 
-  header {
-    .logo-wrapper {
-      .nav-trigger-button {
-        .nav-trigger-icon {
+  .stepper {
+    &__text {
+      color: $gray-dark;
+    }
+    &__line {
+      background-color: $gray-dark;
+    }
+    &__circle {
+      border: 1px solid $gray-dark;
+    }
+  }
 
-          &,
-          &::before,
-          &::after {
-            background-color: $white;
-          }
-        }
+  .form__delivery {
+    span {
+      color: #ffffff;
+    }
+    span:nth-of-type(2n) {
+      color: rgba(#ffffff,.6);
+    }
+    [type="radio"] {
+      border: 1px solid rgba(#ffffff,.4);
+      &:checked {
+        background-color: #ffffff;
       }
     }
+  }
 
-    .features {
-      background-color: #121212;
+  .shop-bag {
+    color: #ffffff;
+    .counter-btn {
+      color: #121212;
     }
+  }
+
+  .footer {
+    background-color: #333333;
+    a {
+      transition: color .1s ease-in;
+      &:hover {
+        color: #ffffff;
+      }
+    }
+    svg {
+      fill: rgba(#ffffff,.6);
+      transition: fill .1s ease-in;
+      &:hover {
+        fill: #ffffff;
+      }
+    }
+  }
+
+  div.darken {
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+  
+    span {
+      color: #ffffff !important;
+    }
+  }
+  
+  span.darken {
+    color: #ffffff !important;
   }
 }

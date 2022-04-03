@@ -3,8 +3,9 @@ console.log('JS loaded')
 
 
 //日夜模式
+// 依照模式替換logo及SVG並改變整頁底色
 const modeSwitcher = document.querySelector('.mode-switcher');
-const logo = document.querySelector('.logo')
+const logo = document.querySelectorAll('.logo')
 const body = document.querySelector('body')
 const header = document.querySelector('header')
 
@@ -13,12 +14,12 @@ const changeImage = function () {
     body.classList.contains('darkmode') ? './image/logo-dark@2x.png' : './image/logo@2x.png';
   const modeIconPath = 
     body.classList.contains('darkmode') ? './image/sun-regular.svg#sun' : './image/moon-regular.svg#moon';
-    logo.src = imgPath
-  modeSwitcher.innerHTML = `<use href=${modeIconPath}></use>`
-  
   const applyBackground = 
-  body.classList.contains('darkmode') ? '#121212' : '#ffffff';
-  header.style.backgroundColor = applyBackground
+    body.classList.contains('darkmode') ? '#121212' : '#ffffff';
+    
+  logo.forEach(e => e.src = imgPath)
+  modeSwitcher.innerHTML = `<use href=${modeIconPath}></use>`
+  header.style.backgroundColor = applyBackground;
 }
 
 modeSwitcher.addEventListener('click', () => {
@@ -26,25 +27,52 @@ modeSwitcher.addEventListener('click', () => {
   changeImage()
 });
 
-//
+// 使 header中的導覽列展開時與深色模式一致
+// 以及導覽與功能區是否顯示
 
 const navTrigger = document.querySelector('.nav-trigger-button');
+const nav = document.querySelector('.nav')
+const features = document.querySelector('.features')
+const navCheckbox = document.querySelector('.nav-trigger')
+
 
 const toggleNavAndFeatures = function () {
-  const isNavTriggered = document.querySelector('.nav-trigger').checked;
+  const isNavTriggered = navCheckbox.checked;
   if (isNavTriggered) {
     header.style.backgroundColor = ''
+    header.classList.remove('extend')
+    nav.classList.add('hidden')
+    features.classList.add('hidden')
 
   } else {
     const applyBackground = 
     body.classList.contains('darkmode') ? '#121212' : '#ffffff';
     header.style.backgroundColor = applyBackground
+
+    header.classList.add('extend')
+    nav.classList.remove('hidden')
+    features.classList.remove('hidden')
   }
 }
 
+    // 確保viewport從 小 > 大 > 又回到小時，回復原本可點、可展開導覽的狀態
+const mediaQueryList = window.matchMedia("screen and (min-width: 375px)")
+const showNav = function () {
+  if (mediaQueryList.matches) {
+    header.classList.remove('extend')
+    nav.classList.remove('hidden')
+    features.classList.remove('hidden')
+  } else {
+    header.classList.remove('extend')
+    nav.classList.add('hidden')
+    features.classList.add('hidden')
+    navCheckbox.checked = false
+  }
+}
+mediaQueryList.addEventListener("change",showNav)
 navTrigger.addEventListener('click', toggleNavAndFeatures);
 
-
+///////////////////////
 /////////// 表單顯示
 
 const prevButton = document.querySelector('.form__control--prev');
@@ -54,7 +82,7 @@ const formDelivery = document.querySelector('.form__delivery')
 const formPayment = document.querySelector('.form__payment')
 const form = document.querySelector('.form')
 
-          ////////// 階段顯示
+          ////////// 當前階段的顯示
 const stepperShapes = Array.from(document.querySelectorAll('.stepper>div'))
 const stepperText = Array.from(document.querySelectorAll('.stepper>span'));
 
@@ -77,7 +105,7 @@ function showStep(stepNum=1) {
 }
 showStep()
 
-        ///////////
+        /////////// 依前或後一步切換表單內容
 
 let currentStep = 'first'
 
@@ -98,13 +126,11 @@ const stepFowrard = function (event) {
       currentStep = 'third'
       showStep(3)
       break;
-    case 'third':
-      formPayment.classList.add('hidden')
-      formAddress.classList.remove('hidden')
-      form.submit()
-      this.innerHTML = '下一步<span>&rarr;</span>'
-      prevButton.classList.add('hidden');
-      currentStep = 'first'
+    // case 'third':
+    //   formPayment.classList.add('hidden')
+    //   formAddress.classList.remove('hidden')
+    //   // form.submit()
+    //   this.innerHTML = '下一步<span>&rarr;</span>'
   }
 }
 
@@ -121,8 +147,9 @@ const stepBack = function (event) {
     case 'third':
       formPayment.classList.add('hidden')
       formDelivery.classList.remove('hidden')
-        currentStep = 'second'
-        showStep(2)
+      currentStep = 'second'
+      this.nextElementSibling.innerHTML = '下一步<span>&rarr;</span>'
+      showStep(2)
   }
 }
 
@@ -132,14 +159,14 @@ prevButton.addEventListener('click', stepBack);
 
 /////////////// 總金額計算
 const products = [{
-  id:'1',
-  name: '破壞補丁修身牛仔褲',
-  price: 1299
-}, {
-  id:'2',
-  name: '刷色直筒牛仔褲',
-  price: 3999
-}]
+    id:'1',
+    name: '破壞補丁修身牛仔褲',
+    price: 1299
+  }, {
+    id:'2',
+    name: '刷色直筒牛仔褲',
+    price: 3999
+  }]
 
 const shopBag = document.querySelector('.shop-bag');
 const deliveryFee = document.querySelector('.shop-bag__delivery-fee')
@@ -157,11 +184,9 @@ const countPrice = function ({target}) {
     const quantityTag = target.parentElement.children[1]
     let currentQty = Number(quantityTag.textContent)
     const priceTag = target.parentElement.nextElementSibling
-
     const clickedItem = target.parentElement.parentElement.dataset.id
     const price = products.find(e => e.id === clickedItem).price
     
-
     if (!currentQty && changeNum === -1) return
     quantityTag.innerHTML = `<span>${currentQty += changeNum}<span>`
     priceTag.innerHTML = `<div>$${Number(currentQty * price).toLocaleString()}</div>`

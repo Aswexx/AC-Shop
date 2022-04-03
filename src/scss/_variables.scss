@@ -79,6 +79,11 @@ div.darken {
 }
 
 span.darken {
-    color: $gray-dark !important;
-  }
+  color: $gray-dark !important;
+}
   ////////////////////////////////////
+
+  // 導覽開啟時蓋滿整頁
+.extend {
+  height: 100vh;
+}

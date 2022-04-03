@@ -32,6 +32,12 @@
       
         a {
           color: $gray-medium;
+          border-bottom: none;
+          transition: color .1s ease-in;
+          
+          &:hover {
+            color: $gray-light;
+          }
         }
       
         svg {

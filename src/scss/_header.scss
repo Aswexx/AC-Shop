@@ -1,7 +1,9 @@
 header {
   ///////////////////header
   position: fixed;
+  z-index: 999;
   left: 2.5%;
+  top: 1rem;
 
   width: 95%;
   margin: 0 auto;
@@ -80,7 +82,7 @@ header {
 
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 1.6rem auto 0 auto;
 
     svg {
       cursor: pointer;
@@ -120,7 +122,6 @@ header {
 
       .logo-wrapper {
         grid-column: 7 / span 2;
-        border: 1px solid green;
 
         .nav-trigger-icon {
           display: none;
@@ -131,19 +132,21 @@ header {
         @include showNav;
         grid-column: 1/5;
         grid-row: 1/2;
-        border: 1px solid red;
         width: 130%;
         display: flex;
         justify-content: space-between;
 
         a {
           border-bottom: none;
+          transition: color .1s ease-in;
+          &:hover {
+            color: $gray-light;
+          }
         }
       }
 
       .features {
         @include showFeatures;
-        border: 1px solid blue;
         grid-column: 11/-1;
         width: 100%;
         margin-top: 0;
