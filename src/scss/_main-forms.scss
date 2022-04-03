@@ -14,6 +14,7 @@ main {
 
     @include respond($bp-first) {
       margin-top: 7rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -21,13 +22,15 @@ main {
     @include respond($bp-first) {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
+    }
+
+    @include respond($bp-second){
       grid-column-gap: $col-gap;
     }
 
     .stepper {
       @include flexCenter;
       justify-content: space-between;
-      margin: 2.4rem 0;
 
       @include respond($bp-first) {
         grid-column: 1/7;
@@ -205,7 +208,7 @@ main {
         grid-row: 1/4;
         border: 1px solid $bg-gray;
         border-radius: 5px;
-        padding-top: 7rem;
+        padding: 3.5rem 1.6rem 0 1.6rem;
       }
     
       &__title {
@@ -228,6 +231,7 @@ main {
         @include respond($bp-first){
           margin: 3.4rem 0;
           grid-template-columns: 12rem 1fr min-content;
+          grid-auto-rows: min-content;
         }
 
         .quantity {
@@ -251,8 +255,14 @@ main {
         }
       }
 
+      &__product-title {
+        @include respond ($bp-first) {
+          grid-column: 2/3;
+        }
+      }
+
       &__item-price {
-        @include respond($bp-first){
+        @include respond($bp-second){
           grid-column: 3/4;
           grid-row: 1/2;
         }
@@ -267,6 +277,12 @@ main {
           border-radius: 50%;
           text-align: center;
           background-color: $bg-gray;
+          cursor: pointer;
+        }
+
+        @include respond($bp-first){
+          grid-column: 2/3;
+          grid-row: 2/3;
         }
       }
 
@@ -315,6 +331,7 @@ main {
         background-color: #f67599;
         transition: all .2s ease-in;
         color: $white;
+        margin-left: auto;
         &:hover{
           background-color: #ff477b;
         }

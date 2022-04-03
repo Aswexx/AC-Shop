@@ -3,6 +3,22 @@
   justify-content: space-between;
 }
 
+.hidden {
+  display: none !important;
+}
+
+div.darken {
+  color: #2a2a2a !important;
+  border: 1px solid #2a2a2a !important;
+}
+div.darken span {
+  color: #2a2a2a !important;
+}
+
+span.darken {
+  color: #2a2a2a !important;
+}
+
 *,
 *::after,
 *::before {
@@ -118,7 +134,6 @@ label {
 .container {
   border: 1px solid;
   margin: 0 auto;
-  margin-top: 1rem;
 }
 
 .darkmode {
@@ -298,12 +313,17 @@ main .title {
 @media screen and (min-width: 375px) {
   main .title {
     margin-top: 7rem;
+    padding-bottom: 4rem;
   }
 }
 @media screen and (min-width: 375px) {
   main .form {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media screen and (min-width: 850px) {
+  main .form {
     grid-column-gap: 2.7027027027%;
   }
 }
@@ -312,7 +332,6 @@ main .form .stepper {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  margin: 2.4rem 0;
 }
 @media screen and (min-width: 375px) {
   main .form .stepper {
@@ -372,7 +391,7 @@ main .form__address--salution::after {
   border-width: 6px 5px 0 5px;
   border-color: #2a2a2a transparent transparent transparent;
   right: 1rem;
-  top: 50%;
+  top: 65%;
   z-index: -1;
 }
 main .form__address--name {
@@ -399,7 +418,7 @@ main .form__address--city::after {
   border-width: 6px 5px 0 5px;
   border-color: #2a2a2a transparent transparent transparent;
   right: 1rem;
-  top: 50%;
+  top: 65%;
   z-index: -1;
 }
 @media screen and (min-width: 375px) {
@@ -494,7 +513,7 @@ main .form__payment--CVC {
     grid-row: 1/4;
     border: 1px solid #f0f0f5;
     border-radius: 5px;
-    padding-top: 7rem;
+    padding: 3.5rem 1.6rem 0 1.6rem;
   }
 }
 main .form .shop-bag__title {
@@ -520,6 +539,8 @@ main .form .shop-bag__item {
     margin: 3.4rem 0;
     grid-template-columns: 12rem 1fr -webkit-min-content;
     grid-template-columns: 12rem 1fr min-content;
+    grid-auto-rows: -webkit-min-content;
+    grid-auto-rows: min-content;
   }
 }
 main .form .shop-bag__item .quantity {
@@ -540,6 +561,11 @@ main .form .shop-bag__product-title, main .form .shop-bag__product-counter, main
   }
 }
 @media screen and (min-width: 375px) {
+  main .form .shop-bag__product-title {
+    grid-column: 2/3;
+  }
+}
+@media screen and (min-width: 850px) {
   main .form .shop-bag__item-price {
     grid-column: 3/4;
     grid-row: 1/2;
@@ -555,6 +581,13 @@ main .form .shop-bag__product-counter .counter-btn {
   border-radius: 50%;
   text-align: center;
   background-color: #f0f0f5;
+  cursor: pointer;
+}
+@media screen and (min-width: 375px) {
+  main .form .shop-bag__product-counter {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
 }
 main .form .shop-bag__amount {
   font-size: 1.4rem;
@@ -598,8 +631,69 @@ main .form__control--next {
   background-color: #f67599;
   transition: all 0.2s ease-in;
   color: #ffffff;
+  margin-left: auto;
 }
 main .form__control--next:hover {
   background-color: #ff477b;
+}
+
+.footer {
+  display: none;
+}
+@media screen and (min-width: 375px) {
+  .footer {
+    display: block;
+    background-color: #f6f7f8;
+  }
+  .footer-wrapper {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  .footer-wrapper img {
+    display: none;
+  }
+  .footer-wrapper ul {
+    font-size: 2.4rem;
+  }
+  .footer-wrapper li {
+    font-size: 1.6rem;
+  }
+  .footer-wrapper li:first-child {
+    padding-top: 1rem;
+  }
+  .footer-wrapper li a {
+    color: #808080;
+  }
+  .footer-wrapper li svg {
+    cursor: pointer;
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: #808080;
+  }
+}
+@media screen and (min-width: 375px) and (min-width: 850px) {
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6.4rem 0 10.5rem 0;
+  }
+  .footer-wrapper img {
+    display: block;
+    align-self: center;
+  }
+  .footer-wrapper ul {
+    font-size: 2.4rem;
+    align-self: flex-start;
+  }
+}
+@media screen and (min-width: 850px) {
+  .footer {
+    margin-top: 12rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/main.css">
     <!-- <link rel="stylesheet" href="/CSS/main.css"> -->
-    <title>Document</title>
+    <title>ALPHA Shop</title>
 </head>
 <body>
   <div class="container">
@@ -41,15 +41,16 @@
     <main>
       <h1 class="title">結帳</h1>
       <form action="" class="form">
+
         <div class="stepper">
           <div class="stepper__circle stepper__circle--1"><span>1</span></div>
-            <span class="stepper__text">寄送地址</span>
+          <span class="stepper__text">寄送地址</span>
           <div class="stepper__line"></div>
           <div class="stepper__circle stepper__circle--2"><span>2</span></div>
-            <span class="stepper__text">運送方式</span>
+          <span class="stepper__text">運送方式</span>
           <div class="stepper__line"></div>
           <div class="stepper__circle stepper__circle--3"><span>3</span></div>
-            <span class="stepper__text">付款資訊</span>
+          <span class="stepper__text">付款資訊</span>
         </div>
 
         <div class="form__address">
@@ -91,7 +92,7 @@
         </div>
 
 
-        <div class="form__delivery">
+        <div class="form__delivery hidden">
           <h2 class="form__title">運送方式</h2>
           <label class="form-group form__delivery--normal" for="normal">
             <input type="radio" id="normal" name="delivery">
@@ -108,7 +109,7 @@
         </div>
 
 
-        <div class="form__payment">
+        <div class="form__payment hidden">
           <h2 class="form__title">付款資訊</h2>
           <div class="form-group form__payment--card-name">
             <label for="card-name">持卡人姓名</label>
@@ -131,7 +132,7 @@
 <!----------------------------------------------------------------------------------->
         <div class="shop-bag">
           <h3 class="shop-bag__title">購物籃</h3>
-          <div class="shop-bag__item">
+          <div class="shop-bag__item" data-id="1">
             <img src="./image/product-1@2x.png" alt="product" class="shop-bag__product-img">
             <span class="shop-bag__product-title">破壞補丁修身牛仔褲</span>
             <div class="shop-bag__product-counter form-row-spacebetween">
@@ -139,9 +140,9 @@
               <span class="quantity">1</span>
               <div class="counter-btn plus">+</div>
             </div>
-            <div class="shop-bag__item-price">$1,999</div>
+            <div class="shop-bag__item-price">$1,299</div>
           </div>
-          <div class="shop-bag__item">
+          <div class="shop-bag__item" data-id="2">
             <img src="./image/product-2@2x.png" alt="product" class="shop-bag__product-img">
             <span class="shop-bag__product-title">刷色直筒牛仔褲</span>
             <div class="shop-bag__product-counter form-row-spacebetween">
@@ -149,28 +150,7 @@
               <span class="quantity">1</span>
               <div class="counter-btn plus">+</div>
             </div>
-            <div class="shop-bag__item-price">$1,999</div>
-          </div>
-
-                    <div class="shop-bag__item">
-                      <img src="./image/product-2@2x.png" alt="product" class="shop-bag__product-img">
-                      <span class="shop-bag__product-title">刷色直筒牛仔褲</span>
-                      <div class="shop-bag__product-counter form-row-spacebetween">
-                        <div class="counter-btn minus">-</div>
-                        <span class="quantity">1</span>
-                        <div class="counter-btn plus">+</div>
-                      </div>
-                      <div class="shop-bag__item-price">$1,999</div>
-                    </div>
-          <div class="shop-bag__item">
-            <img src="./image/product-2@2x.png" alt="product" class="shop-bag__product-img">
-            <span class="shop-bag__product-title">刷色直筒牛仔褲</span>
-            <div class="shop-bag__product-counter form-row-spacebetween">
-              <div class="counter-btn minus">-</div>
-              <span class="quantity">1</span>
-              <div class="counter-btn plus">+</div>
-            </div>
-            <div class="shop-bag__item-price">$1,999</div>
+            <div class="shop-bag__item-price">$3,999</div>
           </div>
 <!------------------------------------------------ ---------------------------------->
 <!----------------------------------------------------------------------------------->
@@ -178,7 +158,7 @@
           <div class="shop-bag__amount">
             <div class="form-row-spacebetween">
               <span class="shop-bag__amount-text">運費</span>
-              <span class="shop-bag__delivery-fee">免費</span>
+              <span class="shop-bag__delivery-fee"></span>
             </div>
             <div class="form-row-spacebetween">
               <span class="shop-bag__amount-text">小計</span>
@@ -188,19 +168,49 @@
         </div>
 
         <div class="form__control form-row-spacebetween">
-          <button class="form__control--prev"><span>&larr;</span>上一步</button>
+          <button class="form__control--prev hidden"><span>&larr;</span>上一步</button>
           <button class="form__control--next">下一步<span>&rarr;</span></button>
         </div>
 
       </form>
 
     </main>
+    </div>
     <!-------------------------------------------------------------->
     <!-------------------------------------------------------------->
     <footer class="footer">
+      <div class="footer-wrapper">
+      <img src="./image/logo@2x.png" alt="logo" class="logo">
+      <ul class="footer__list">客戶服務
+        <li><a href="#">運送說明</a></li>
+        <li><a href="#">退換貨相關</a></li>
+        <li><a href="#">付款資訊</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
 
+      <ul class="footer__list">關於我們
+        <li><a href="#">品牌故事</a></li>
+        <li><a href="#">媒體聯繫</a></li>
+        <li><a href="#">Press kit</a></li>
+      </ul>
+
+      <ul class="footer__list">資訊
+        <li><a href="#">隱私權政策</a></li>
+        <li><a href="#">Cookie</a></li>
+        <li><a href="#">GDPR</a></li>
+      </ul>
+
+      <ul class="footer__list">追蹤 Alpha Camp
+        <li><a href="#">+886 02123-45678</a></li>
+        <li>
+          <svg><use href="./image/facebook-f-brands.svg#fb"></use></svg>
+          <svg><use href="./image/instagram-brands.svg#ig"></use></svg>
+          <svg><use href="./image/phone-solid.svg#phone"></use></svg>
+        </li>
+      </ul>
+      </div>
     </footer>
-  </div>
+  
     <script src="./dist/bundle.js"></script>
     <!-- <script src="./dev.js"></script> -->
 </body>

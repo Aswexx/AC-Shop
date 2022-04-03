@@ -41,7 +41,7 @@ $col-gap: calc(30 / 1110 * 100%);
     border-width: 6px 5px 0 5px;
     border-color: $gray-dark transparent transparent transparent;
     right: 1rem;
-    top: 50%;
+    top: 65%;
     z-index: -1;
   }
 }
@@ -63,3 +63,22 @@ $bp-second: 850px;
   display: flex;
   justify-content: space-between;
 }
+
+    // 用來切換顯示不同階段的 form
+.hidden {
+  display: none !important
+}
+
+    // 用來切換不同階段的 stepper 變深色
+div.darken {
+  color: $gray-dark !important;
+  border: 1px solid $gray-dark !important;
+  span {
+    color: $gray-dark !important;
+  }
+}
+
+span.darken {
+    color: $gray-dark !important;
+  }
+  ////////////////////////////////////

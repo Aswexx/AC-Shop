@@ -1,0 +1,69 @@
+
+.footer {
+  display: none;
+  @include respond($bp-first){
+    display: block;
+    background-color: #f6f7f8;
+    
+    &-wrapper {
+      max-width: 1110px;
+      margin: 0 auto;
+      padding-top: 1rem;
+
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-gap: 1rem;
+
+
+      img {
+        display: none;
+      }
+
+      ul {
+        font-size: 2.4rem;
+      }
+
+      li {
+        font-size: 1.6rem;
+      
+        &:first-child {
+          padding-top: 1rem;
+        }
+      
+        a {
+          color: $gray-medium;
+        }
+      
+        svg {
+          cursor: pointer;
+          width: 1.6rem;
+          height: 1.6rem;
+          fill: $gray-medium;
+        }
+      }
+    
+      @include respond($bp-second){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6.4rem 0 10.5rem 0;
+
+        img {
+          display: block;
+          align-self: center;
+        }
+      
+        ul {
+          font-size: 2.4rem;
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+
+  @include respond($bp-second){
+    margin-top: 12rem;
+  }
+}
+
+
